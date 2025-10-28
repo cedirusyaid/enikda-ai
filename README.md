@@ -1,8 +1,8 @@
-# ENIKDA-AI: Analisis Prediktif Kedisiplinan dan Kinerja ASN
+# 🤖 ENIKDA-AI: Analisis Prediktif Kedisiplinan dan Kinerja ASN
 
 Selamat datang di repositori ENIKDA-AI. Dokumen ini menjelaskan latar belakang, tujuan, dan rencana pengembangan aplikasi **ENIKDA (Elektronik Penilaian Kinerja dan Disiplin Aparatur)** dengan modul kecerdasan buatan (AI) untuk analisis prediktif kedisiplinan dan kinerja Aparatur Sipil Negara (ASN).
 
-## Latar Belakang
+## 📄 Latar Belakang
 
 Aplikasi ENIKDA adalah sistem berbasis web yang sudah berjalan untuk membantu penilaian kinerja dan disiplin aparatur di Kabupaten Sinjai. Namun, dalam implementasinya, ditemukan beberapa masalah utama:
 
@@ -11,17 +11,17 @@ Aplikasi ENIKDA adalah sistem berbasis web yang sudah berjalan untuk membantu pe
 
 Untuk mengatasi masalah ini, kami mengusulkan **ENIKDA-AI**, sebuah inisiatif untuk mengintegrasikan, mengotomatisasi, dan menambahkan kemampuan analisis prediktif berbasis AI ke dalam sistem yang sudah ada.
 
-## Solusi & Inovasi AI
+## 💡 Solusi & Inovasi AI
 
 ENIKDA-AI adalah modul cerdas yang akan diintegrasikan untuk meningkatkan efisiensi, akurasi, dan kedalaman analisis data kepegawaian. Solusi yang diusulkan mencakup:
 
--   **Integrasi API eKinerja BKN:** Menghilangkan input ganda dengan sinkronisasi data kinerja secara otomatis ke sistem nasional.
--   **Integrasi API SIMPEGNAS:** Menggantikan proses absensi manual dengan pengambilan data kehadiran otomatis melalui API dan *cron job* berkala.
--   **Perhitungan TPP Otomatis:** Menggunakan data yang terintegrasi untuk menghitung Tambahan Penghasilan Pegawai (TPP) secara lebih cepat dan akurat.
--   **Monitoring Real-Time:** Menyediakan notifikasi otomatis kepada pimpinan melalui Telegram Bot untuk pengawasan kedisiplinan ASN secara *real-time*.
--   **Analisis Kedisiplinan Berbasis AI:** Menganalisis pola kehadiran dan data kinerja historis untuk menghasilkan **prediksi tingkat disiplin** pegawai secara objektif, membantu pimpinan dalam pengambilan keputusan yang berbasis data.
+-   ✅ **Integrasi API eKinerja BKN:** Menghilangkan input ganda dengan sinkronisasi data kinerja secara otomatis ke sistem nasional.
+-   ✅ **Integrasi API SIMPEGNAS:** Menggantikan proses absensi manual dengan pengambilan data kehadiran otomatis melalui API dan *cron job* berkala.
+-   ✅ **Perhitungan TPP Otomatis:** Menggunakan data yang terintegrasi untuk menghitung Tambahan Penghasilan Pegawai (TPP) secara lebih cepat dan akurat.
+-   ✅ **Monitoring Real-Time:** Menyediakan notifikasi otomatis kepada pimpinan melalui Telegram Bot untuk pengawasan kedisiplinan ASN secara *real-time*.
+-   ✅ **Analisis Kedisiplinan Berbasis AI:** Menganalisis pola kehadiran dan data kinerja historis untuk menghasilkan **prediksi tingkat disiplin** pegawai secara objektif, membantu pimpinan dalam pengambilan keputusan yang berbasis data.
 
-## Rencana Pengembangan Modul AI
+## 🗓️ Rencana Pengembangan Modul AI
 
 Pengembangan MVP (Minimum Viable Product) untuk Modul Analisis Kedisiplinan Berbasis AI akan difokuskan selama periode Hackathon (10-13 November 2025), dengan tahapan sebagai berikut:
 
@@ -34,7 +34,7 @@ Pengembangan MVP (Minimum Viable Product) untuk Modul Analisis Kedisiplinan Berb
 | **Awal Nov 2025** | Persiapan Teknis Hackathon | Menyiapkan skrip *cron job*, *environment test*, dan dokumentasi teknis. |
 | **10-13 Nov 2025** | **Fase Hackathon** | **Pengembangan MVP Modul Analisis Kedisiplinan Berbasis AI** dan implementasi *cron job* untuk sinkronisasi data. |
 
-## Arsitektur & Teknologi
+## 💻 Arsitektur & Teknologi
 
 | Komponen | Teknologi | Deskripsi |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Pengembangan MVP (Minimum Viable Product) untuk Modul Analisis Kedisiplinan Berb
 | **Notifikasi** | Telegram Bot | Mengirim laporan dan notifikasi hasil analisis kepada pimpinan. |
 | **Kontrol Versi** | Git (Github) / Dropbox | Kolaborasi kode sumber dan dokumentasi proyek. |
 
-## Tim Pengembang
+## 👥 Tim Pengembang
 
 -   **Muhammad Rusyaid** (Project Lead & AI Developer)
 -   **Abd. Dzuljalali Wal Ikram** (UI/UX Designer & Frontend Developer)
