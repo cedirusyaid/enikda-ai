@@ -1,0 +1,96 @@
+Proyek ini adalah aplikasi web PHP yang dibangun menggunakan framework CodeIgniter 3. Tujuannya adalah untuk mengelola data pegawai. Untuk antarmuka pengguna, aplikasi ini menggunakan template AdminLTE dan framework Bootstrap, serta pustaka DataTables untuk tabel interaktif. Pengelolaan dependensi PHP dilakukan melalui Composer. Skema database terdapat dalam file `pegawai_db.sql`.
+
+Standar CRUD: Untuk operasi buat (create) dan edit, hanya menggunakan satu file form. Untuk halaman daftar (list), tombol-tombol (buttons) hanya menggunakan ikon tanpa teks, dengan atribut `title` untuk menjelaskan nama/tujuan tombol.
+
+---
+### Struktur Database Utama
+
+Aplikasi ini berpusat pada beberapa tabel utama yang saling berhubungan:
+
+*   **`pegawai_data`**: Tabel induk yang menyimpan data inti setiap pegawai, seperti NIP, nama, dan informasi pribadi lainnya. `nip` adalah primary key.
+*   **`unit_data`**: Menyimpan daftar semua unit kerja atau OPD (Organisasi Perangkat Daerah).
+*   **`jabatan_data`**: Tabel pivot krusial yang menghubungkan pegawai ke unit kerja mereka. Tabel ini mendefinisikan jabatan seorang pegawai (`jabatan_nama`), NIP pegawai yang memegang jabatan tersebut (`jabatan_nip`), dan unit kerja tempat jabatan itu berada (`unit_id`).
+*   **`absen_data`** dan **`rekap_absen`**: Mencatat data absensi. `absen_data` berisi log absensi harian, sedangkan `rekap_absen` berisi rekapitulasi bulanan per pegawai. Keduanya terhubung ke `pegawai_data` melalui kolom `nip`.
+*   **`ekin_laporan_penilaian`**: Menyimpan data hasil penilaian e-Kinerja yang disinkronkan dari API eksternal. Terhubung ke `pegawai_data` melalui kolom `nip`.
+*   **`document_submissions`**: Mencatat pengajuan berkas TPP per unit kerja. Terhubung ke `unit_data` melalui `unit_id`.
+
+### Alur Otentikasi & Hak Akses
+
+Sistem otentikasi diatur melalui controller `User.php` dan menggunakan library session CodeIgniter.
+
+1.  **Login**: Pengguna login menggunakan NIP dan password. Controller `User` memvalidasi kredensial ini melalui API eksternal.
+2.  **Session**: Jika berhasil, informasi pengguna disimpan dalam session, termasuk:
+    *   `is_logged_in`: Penanda status login.
+    *   `nip`: NIP pengguna.
+    *   `nama`: Nama lengkap pengguna.
+    *   `unit_id`: ID unit kerja pengguna.
+    *   `admin_kabupaten`: Flag (1 atau 0) yang menandakan apakah pengguna adalah admin tingkat kabupaten dengan hak akses penuh.
+    *   `admin_unit`: Flag (1 atau 0) yang menandakan apakah pengguna adalah admin tingkat OPD.
+3.  **Hak Akses**: Aplikasi menggunakan flag `admin_kabupaten` dan `admin_unit` di dalam session untuk mengontrol akses ke berbagai fitur. Admin kabupaten dapat melihat data dari semua unit, sedangkan admin unit hanya dapat melihat dan mengelola data untuk unit kerjanya sendiri.
+
+---
+### Ringkasan Fungsi Controller
+
+Berikut adalah ringkasan fungsionalitas dari setiap file controller yang ada di `application/controllers/`:
+
+*   **`Welcome.php`**: Controller default dari CodeIgniter. Kemungkinan besar menampilkan halaman dashboard atau halaman utama aplikasi.
+
+*   **`User.php`**: Mengelola otentikasi pengguna. Fungsi utamanya adalah `login()` yang memvalidasi NIP dan password melalui API eksternal, serta `logout()` yang mengakhiri sesi pengguna.
+
+*   **`Unit.php`**: Menangani operasi CRUD (Create, Read, Update, Delete) untuk data unit kerja atau OPD (Organisasi Perangkat Daerah).
+
+*   **`Jabatan.php`**: Mengelola data jabatan pegawai. Controller ini sudah menerapkan standar CRUD yang disepakati, yaitu menggunakan satu fungsi `crud()` untuk menangani form tambah dan edit data.
+
+*   **`Absensi.php`**: Mengelola data absensi (kehadiran) pegawai. Fungsi utamanya adalah menampilkan rekapitulasi absensi berdasarkan unit kerja, bulan, dan tahun.
+
+*   **`Kinerja.php`**: Mengelola data kinerja pegawai. Mirip dengan `Absensi.php`, controller ini menampilkan rekapitulasi data kinerja berdasarkan unit kerja, bulan, dan tahun.
+
+*   **`Ekin.php`**: Controller kompleks yang berfungsi untuk mengelola dan menyinkronkan data e-Kinerja dari API eksternal. Fitur utamanya meliputi:
+    *   Manajemen konfigurasi koneksi API.
+    *   Manajemen periode penilaian kinerja.
+    *   Sinkronisasi data penilaian dan SKP secara manual maupun otomatis.
+    *   Menampilkan laporan penilaian per pegawai dan per unit kerja.
+
+*   **`Berkas.php`**: Controller yang sangat ekstensif untuk mengelola alur kerja pengunggahan dan verifikasi berkas TPP (Tambahan Penghasilan Pegawai). Fungsionalitasnya mencakup:
+    *   Pengunggahan, pengeditan, dan penghapusan berkas oleh admin OPD.
+    *   Alur kerja persetujuan (approval) dan penolakan (rejection) oleh admin kabupaten.
+    *   Pencatatan riwayat (history) untuk setiap perubahan status berkas.
+    *   Dashboard dan laporan untuk memonitor status pengumpulan berkas.
+
+*   **`Contoh.php`**: Controller sederhana yang kemungkinan digunakan sebagai contoh atau untuk keperluan testing, karena hanya memuat satu view tabel (`contoh_tabel`).
+
+---
+### Ringkasan Perubahan (Oktober 2025)
+
+Berikut adalah ringkasan perubahan dan penambahan fitur yang telah dilakukan:
+
+#### Perbaikan Error
+*   Memperbaiki error "Undefined property" pada halaman dashboard berkas dengan memperbaiki query database di `Berkas_model.php`.
+*   Memperbaiki error "regular expression is too large" pada laporan e-Kinerja per unit dengan melakukan refaktorisasi query di `Ekin_model.php` untuk menggunakan subquery yang lebih efisien.
+*   Menyelesaikan berbagai error "Undefined variable" pada halaman detail dan log absensi dengan memastikan data diteruskan dengan benar antara controller dan view.
+
+#### Peningkatan UI/UX
+*   Mengubah tombol logout di header utama menjadi menu dropdown yang berisi link "Profile" dan "Logout".
+*   Menjadikan halaman dashboard sebagai halaman default aplikasi.
+*   Memindahkan tombol "Sinkronisasi Unit" pada halaman laporan e-Kinerja ke header kartu untuk menghemat ruang.
+*   Mengkonfigurasi tabel utama (`#example1`) agar kolom "No." tidak dapat diurutkan dan nomornya diperbarui secara otomatis, meningkatkan pengalaman pengguna saat menyortir data.
+*   Memindahkan tombol "Edit Jabatan" pada halaman detail jabatan ke header kartu.
+*   Mengelompokkan link "OPD", "Jabatan", dan "Pegawai" di sidebar ke dalam menu dropdown "Master Data".
+*   Mengubah filter pada halaman laporan e-Kinerja per unit agar formulir dikirim secara otomatis saat ada perubahan (onchange).
+*   Menambahkan navigasi tab antara halaman "Detail Absensi" dan "Log Absensi" untuk memudahkan perpindahan.
+
+#### Fitur Baru
+*   **E-Kinerja:**
+    *   Menambahkan informasi waktu eksekusi pada notifikasi Telegram untuk proses sinkronisasi unit.
+    *   Menambahkan informasi "update terakhir" pada halaman laporan e-Kinerja per unit.
+    *   Menambahkan tombol untuk memungkinkan sinkronisasi data per pegawai langsung dari halaman laporan unit.
+    *   Menambahkan tampilan progres dan notifikasi Telegram untuk proses sinkronisasi per pegawai.
+*   **Manajemen Pegawai:**
+    *   Membuat fungsionalitas CRUD (Create, Read, Update, Delete) penuh untuk data pegawai, termasuk controller (`Pegawai.php`), model (`Pegawai_model.php`), dan view baru.
+    *   Menambahkan filter berdasarkan status (aktif/tidak aktif) dan unit kerja pada halaman daftar pegawai.
+*   **Manajemen Unit:**
+    *   Menambahkan kolom "Jumlah Jabatan" pada halaman daftar unit kerja (OPD).
+*   **Manajemen Absensi:**
+    *   Membuat halaman baru `absensi/log_absen` untuk menampilkan log absensi mentah dari tabel `tb_scanlog_ars`, lengkap dengan fungsionalitas filter.
+    *   Menambahkan link dari halaman rekapitulasi absensi utama ke halaman detail dan log absensi yang baru.
+    *   Menambahkan fungsionalitas CRUD penuh untuk tabel `absen_excp` (pengecualian absensi).

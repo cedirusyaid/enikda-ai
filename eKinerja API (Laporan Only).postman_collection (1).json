@@ -1,0 +1,1082 @@
+{
+	"info": {
+		"_postman_id": "df901320-6b3d-4005-860e-b4965e35f6fd",
+		"name": "eKinerja API (Laporan Only)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3796883"
+	},
+	"item": [
+		{
+			"name": "Laporan",
+			"item": [
+				{
+					"name": "List Periode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{address}}/api_kinerja/referensi/periode",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api_kinerja",
+								"referensi",
+								"periode"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Berhasil",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{address}}/api_kinerja/referensi/periode",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"referensi",
+										"periode"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:08:02 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "connection",
+									"value": "close"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"id\": \"e35f513c982941bb823364425ca655d9\",\n            \"nama\": \"Periode 1 Januari - 15 Januari\",\n            \"tahun\": null,\n            \"periode_awal\": \"01-01\",\n            \"periode_akhir\": \"01-15\",\n            \"batas_pengisian\": \"01-23\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"1\"\n        },\n        {\n            \"id\": \"de5a5c12ca3e47f89dd2a2d63b0056dc\",\n            \"nama\": \"Periode 16 Januari - 15 Februari\",\n            \"tahun\": null,\n            \"periode_awal\": \"01-16\",\n            \"periode_akhir\": \"02-15\",\n            \"batas_pengisian\": \"02-20\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"2\"\n        },\n        {\n            \"id\": \"8eadac342add4db19f6dedeb0463e59d\",\n            \"nama\": \"Periode 16 Februari - 15 Maret\",\n            \"tahun\": null,\n            \"periode_awal\": \"02-16\",\n            \"periode_akhir\": \"03-15\",\n            \"batas_pengisian\": \"03-20\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"3\"\n        },\n        {\n            \"id\": \"073ac0e869804715811732d04cbadfb8\",\n            \"nama\": \"Periode 16 Maret - 15 April\",\n            \"tahun\": null,\n            \"periode_awal\": \"03-16\",\n            \"periode_akhir\": \"04-15\",\n            \"batas_pengisian\": \"04-22\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"4\"\n        },\n        {\n            \"id\": \"ecafaaf69bdd4ce5b0897cdb77194b02\",\n            \"nama\": \"Periode 16 April - 15 Mei\",\n            \"tahun\": null,\n            \"periode_awal\": \"04-16\",\n            \"periode_akhir\": \"05-15\",\n            \"batas_pengisian\": \"05-21\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"5\"\n        },\n        {\n            \"id\": \"183e656e56f242dea9f39cd1fb861675\",\n            \"nama\": \"Periode 16 Mei - 15 Juni\",\n            \"tahun\": null,\n            \"periode_awal\": \"05-16\",\n            \"periode_akhir\": \"06-15\",\n            \"batas_pengisian\": \"06-19\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"6\"\n        },\n        {\n            \"id\": \"bfedf74aa1fe4eb7bdf642cf3bc34b70\",\n            \"nama\": \"Periode 16 Juni - 15 Juli\",\n            \"tahun\": null,\n            \"periode_awal\": \"06-16\",\n            \"periode_akhir\": \"07-15\",\n            \"batas_pengisian\": \"07-21\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"7\"\n        },\n        {\n            \"id\": \"73f60866e7944e299c0b5322a5783074\",\n            \"nama\": \"Periode 16 Juli - 15 Agustus\",\n            \"tahun\": null,\n            \"periode_awal\": \"07-16\",\n            \"periode_akhir\": \"08-15\",\n            \"batas_pengisian\": \"08-21\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"8\"\n        },\n        {\n            \"id\": \"a92c9abbbd51497682d976968a0490d5\",\n            \"nama\": \"Periode 16 Agustus - 15 September\",\n            \"tahun\": null,\n            \"periode_awal\": \"08-16\",\n            \"periode_akhir\": \"09-15\",\n            \"batas_pengisian\": \"09-19\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"9\"\n        },\n        {\n            \"id\": \"a286047443a34d57b38d9803261f64f8\",\n            \"nama\": \"Periode 16 September - 15 Oktober\",\n            \"tahun\": null,\n            \"periode_awal\": \"09-16\",\n            \"periode_akhir\": \"10-15\",\n            \"batas_pengisian\": \"10-21\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"10\"\n        },\n        {\n            \"id\": \"75acd7f27f4743d085b0327b47aea963\",\n            \"nama\": \"Periode 16 Oktober - 15 November\",\n            \"tahun\": null,\n            \"periode_awal\": \"10-16\",\n            \"periode_akhir\": \"11-15\",\n            \"batas_pengisian\": \"11-20\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"11\"\n        },\n        {\n            \"id\": \"d08dd78d0d9740c4a76ad8ba85f35204\",\n            \"nama\": \"Periode 16 November - 15 Desember\",\n            \"tahun\": null,\n            \"periode_awal\": \"11-16\",\n            \"periode_akhir\": \"12-15\",\n            \"batas_pengisian\": \"12-19\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": \"bulanan\",\n            \"angka_periodik\": \"12\"\n        },\n        {\n            \"id\": \"068564360dee4c46857bb2b15ee0bbda\",\n            \"nama\": \"Periode 16 Desember - 31 Desember\",\n            \"tahun\": null,\n            \"periode_awal\": \"12-16\",\n            \"periode_akhir\": \"12-31\",\n            \"batas_pengisian\": \"+01-7\",\n            \"jenis_periode\": null,\n            \"tipe_periodik\": null,\n            \"angka_periodik\": null\n        },\n        {\n            \"id\": \"f9a8936f682945d7bc99f35c0a013491\",\n            \"nama\": \"Penilaian Tahunan\",\n            \"tahun\": null,\n            \"periode_awal\": \"01-01\",\n            \"periode_akhir\": \"12-31\",\n            \"batas_pengisian\": \"+01-31\",\n            \"jenis_periode\": \"final\",\n            \"tipe_periodik\": null,\n            \"angka_periodik\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Laporan Penilaian",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{address}}/api_kinerja/laporan/penilaian/2024/:periode_id?nip=199410032020121008",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api_kinerja",
+								"laporan",
+								"penilaian",
+								"2024",
+								":periode_id"
+							],
+							"query": [
+								{
+									"key": "nip",
+									"value": "199410032020121008",
+									"description": "(Opsional}"
+								}
+							],
+							"variable": [
+								{
+									"key": "periode_id",
+									"value": "073ac0e869804715811732d04cbadfb8",
+									"description": "ID Periode Instansi (didapatkan dari hit endpoint List Periode)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Berhasil",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/penilaian/2024/073ac0e869804715811732d04cbadfb8?nip=199410032020121008",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"penilaian",
+										"2024",
+										"073ac0e869804715811732d04cbadfb8"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"description": "(Opsional}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:08:14 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"jenis\": \"31\",\n            \"id\": \"000000006e640bf0016e651d9dda110c\",\n            \"nip\": \"199410032020121008\",\n            \"nama\": \"RUSPANDI REYNALDI BENEDICTUS\",\n            \"periode_awal_skp\": \"2024-01-01\",\n            \"periode_akhir_skp\": \"2024-12-31\",\n            \"skp_unor_id\": \"8ae483a57224a634017259ddd74a099d\",\n            \"skp_unor\": \"Bidang Informasi Kepegawaian Kantor Regional XI BKN Manado\",\n            \"skp_unor_induk\": \"Kantor Regional XI BKN Manado\",\n            \"skp_jabatan\": \"Pranata Komputer Ahli Pertama\",\n            \"skp_jenis_jabatan\": \"2\",\n            \"is_skp_plt_plh_pjb\": 0,\n            \"hasil_kerja\": \"diatas\",\n            \"perilaku_kerja\": \"diatas\",\n            \"hasil_akhir\": \"sangat baik\",\n            \"pegawai_atasan_id\": \"A8ACA7ABF0BA3912E040640A040269BB\",\n            \"pegawai_atasan_nip\": \"198210022008011010\",\n            \"pegawai_atasan_nama\": \"TONNY MUNAYANG\",\n            \"pegawai_atasan_unor_id\": \"8ae483a57224a634017259ddd74a099d\",\n            \"pegawai_atasan_unor\": \"Bidang Informasi Kepegawaian Kantor Regional XI BKN Manado\",\n            \"pegawai_atasan_jabatan\": \"Kepala Bidang Informasi Kepegawaian Kantor Regional XI BKN Manado\",\n            \"pegawai_atasan_golru\": \"III/d\",\n            \"waktu_dinilai\": \"2024-04-18 08:56:06\",\n            \"pegawai_penilai_id\": \"A8ACA7ABF0BA3912E040640A040269BB\",\n            \"tahun_skp\": 2024,\n            \"skp_id\": \"bbdb2ea2c5bc4d30b962bc6cd82623cc\",\n            \"periode_id\": \"073ac0e869804715811732d04cbadfb8\",\n            \"skp_penilaian_id\": \"32c944103ca14f6baa3676da64a2d293\",\n            \"golru\": \"III/b\",\n            \"jenis_pegawai\": \"pns\",\n            \"created_at\": \"2024-04-16 07:37:15\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Penilaian tidak ditemukan",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/penilaian/2024/073ac0e869804715811732d04cbadfb8?nip=199410032020121008",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"penilaian",
+										"2024",
+										"073ac0e869804715811732d04cbadfb8"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"description": "(Opsional}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:16:13 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": null,\n    \"data\": []\n}"
+						},
+						{
+							"name": "ID Periode tidak valid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/penilaian/2024/:periode_id?nip=199410032020121008",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"penilaian",
+										"2024",
+										":periode_id"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"description": "(Opsional}"
+										}
+									],
+									"variable": [
+										{
+											"key": "periode_id",
+											"value": "073ac0e869804715811732d04cbadfb",
+											"description": "ID Periode Instansi (didapatkan dari hit endpoint List Periode)"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:58:17 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"ID Periode tidak valid\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Laporan SKP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nip",
+									"value": "199410032020121008",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{address}}/api_kinerja/laporan/skp/2024?nip=199410032020121008",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api_kinerja",
+								"laporan",
+								"skp",
+								"2024"
+							],
+							"query": [
+								{
+									"key": "nip",
+									"value": "199410032020121008"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Berhasil",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/skp/2024?nip=199410032020121008",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"skp",
+										"2024"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "199410032020121008"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:09:27 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"id\": \"000000006e640bf0016e651d9dda110c\",\n            \"jenis\": \"31\",\n            \"unit\": \"Bidang Informasi Kepegawaian Kantor Regional XI BKN Manado\",\n            \"nip\": \"199410032020121008\",\n            \"nama\": \"RUSPANDI REYNALDI BENEDICTUS\",\n            \"jabatan\": \"Pranata Komputer Ahli Pertama\",\n            \"is_skp\": 1,\n            \"skp_id\": \"bbdb2ea2c5bc4d30b962bc6cd82623cc\",\n            \"skp_unor\": \"Bidang Informasi Kepegawaian Kantor Regional XI BKN Manado\",\n            \"skp_unor_atasan\": \"Kantor Regional XI BKN Manado\",\n            \"skp_unor_induk\": \"Kantor Regional XI BKN Manado\",\n            \"skp_jabatan\": \"Pranata Komputer Ahli Pertama\",\n            \"skp_jenis_jabatan\": \"2\",\n            \"skp_status\": \"persetujuan\",\n            \"skp_model\": \"jajf\",\n            \"periode_awal\": \"2024-01-01\",\n            \"periode_akhir\": \"2024-12-31\",\n            \"is_plt_plh\": 0,\n            \"jenis_pegawai\": \"pns\",\n            \"created_at\": \"2024-01-12 03:46:56\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Tahun tidak valid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/skp/2024?nip=1994100320201210086",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"skp",
+										"2024"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "1994100320201210086"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:13:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Tahun tidak valid\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "SKP Tidak Ditemukan",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nip",
+											"value": "199410032020121008",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{address}}/api_kinerja/laporan/skp/2026?nip=19941003202012100",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api_kinerja",
+										"laporan",
+										"skp",
+										"2026"
+									],
+									"query": [
+										{
+											"key": "nip",
+											"value": "19941003202012100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 26 Mar 2025 03:14:30 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Apache"
+								},
+								{
+									"key": "vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.1.15"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src 'self' https://sso-siasn.bkn.go.id/ https://iam-siasn.bkn.go.id/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:"
+								},
+								{
+									"key": "permissions-policy",
+									"value": "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=*, publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=*, usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "sameorigin"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "cross-origin-embedder-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "unsafe-none"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "cross-origin"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": null,\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "si-kinerja",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_login}}",
+					"host": [
+						"{{url_login}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "address",
+			"value": "localhost:8000",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJqSEVjQWFPcVFWemFYNGlVeExPVFJYb3lCSWp1a0Z3UHlZOFhtcTZhNkFrIn0.eyJleHAiOjE2Nzc2NzU1MTIsImlhdCI6MTY3NzYzOTUxOSwiYXV0aF90aW1lIjoxNjc3NjM5NTEyLCJqdGkiOiI5NDQ3NDU0Zi02YmJiLTRlNDItODRhMS05NWE2NDhlYTNmN2IiLCJpc3MiOiJodHRwczovL2lhbS1zaWFzbi5ia24uZ28uaWQvYXV0aC9yZWFsbXMvcHVibGljLXNpYXNuIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjI1MDFiYTk1LWQwNmItNGVkZS1iMTk1LWI4NzdlYmU4NDNjNCIsInR5cCI6IkJlYXJlciIsImF6cCI6InNpLWtpbmVyamEiLCJub25jZSI6ImY1MjgyODkxLWM0YTEtNDUwNi04YzNiLTRlYmM4MWY2YzFkYSIsInNlc3Npb25fc3RhdGUiOiI0YTY4YzYxNC01YmFlLTQ1YmItOTExNC0zNDc4MDEzNmQyN2QiLCJhY3IiOiIwIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9ia24tc2kta2luZXJqYS50ZXN0IiwiaHR0cHM6Ly9raW5lcmphLXRyYWluaW5nLmJrbi5nby5pZCIsImh0dHA6Ly8xMC4xMDAuNy42MyIsImh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCIsImh0dHA6Ly9raW5lcmphLXRyYWluaW5nLmJrbi5nby5pZCIsImh0dHA6Ly9raW5lcmphLmJrbi5nby5pZCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicm9sZTpzaWFzbi1pbnN0YW5zaTpwZXJlbWFqYWFuOm9wZXJhdG9yIiwicm9sZTptYW5hamVtZW4td3M6ZGV2ZWxvcGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJQVVRVIFdJUkFNQVNXQVJBIFdJRFlBIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMTk5MzA5MjgyMDE4MDExMDAyIiwiZ2l2ZW5fbmFtZSI6IlBVVFUiLCJmYW1pbHlfbmFtZSI6IldJUkFNQVNXQVJBIFdJRFlBIiwiZW1haWwiOiJpbml0cnVubGV2ZWwwQGdtYWlsLmNvbSJ9.pioWc9YYan1pYbPlUnK1ZrRwLBK2e2v33GFiJfNUZBoOG3Dhl4T6U0C2wEe2y3TLgQdCd-81GZ3-aqkGwYz9GFlDNJY_F6BVNfyPKGpwEPlMH0u2uOIKwSU_uqSz8L3IutP6bZUZ6eqxg9YU3sL16fOr9xLs7ZOZe5Lh0mndeSHwcDF-J2k51rLyum2UZuM-Qy-bvClFHOVr8NUfhmojC4Vkchksx5qcEGmzd6hjwRZJ8qUlsE6-A9Fv_WV53kXXsEwk0yhal6fMemMHRQ3LEJzLuSNeH7WXG8IQXoFmeQ3-g-PtAup-QUfxB4ZFApT39-Cuel-P82E-6YaFOPZQlA",
+			"type": "default"
+		}
+	]
+}
