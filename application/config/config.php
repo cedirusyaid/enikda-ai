@@ -23,10 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = '';
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')?"https://":"http://";
-
-$config['base_url'] = $protocol.$_SERVER['HTTP_HOST'].'/enikda_ai/';
+$config['base_url'] = isset($_ENV['APP_BASE_URL']) ? $_ENV['APP_BASE_URL'] : 'http://localhost/enikda_ai/';
 
 /*
 |--------------------------------------------------------------------------
